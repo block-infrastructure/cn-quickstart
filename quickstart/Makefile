@@ -303,7 +303,7 @@ capture-logs: docker-available ## Monitor docker events and capture logs
 	    if [ -z "$$network_attached" ]; then \
 	        continue; \
 	    fi; \
-	    echo "$$(date -u -d "@$$time" +"%Y-%m-%dT%H:%M:%S") $$service_name $$status"; \
+	    echo "$$(date -u -r "@$$time" +"%Y-%m-%dT%H:%M:%S") $$service_name $$status"; \
 	    if [ "$$status" = "start" ]; then \
 	        echo ">> $$service_name"; \
 	        ext=".log"; \
